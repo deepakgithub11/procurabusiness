@@ -26,7 +26,7 @@ const AdminNavbar = () => {
               <li><Link href={{ pathname: '/admin-users' }}> Users </Link></li>
               <li><Link href={{ pathname: '/admin-products' }}> Products</Link></li>
               <li><Link href={{ pathname: '/adminaddproduct' }}>Add Products</Link></li>
-              <li><Link href={{ pathname: '/adminorders' }}>Orders</Link></li>
+              <li><Link href={{ pathname: '/admin-orders' }}>Orders</Link></li>
             </ul>
 
             <button className='btn-warning' onClick={handleclick}>Sign Out</button>

@@ -47,7 +47,7 @@ const Product = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ productId, quantity, total  }),
           credentials: 'include', // ✅ important
-
+        
       });
       if (!res.ok) throw new Error('Failed to place order');
       alert('Order placed successfully!');
