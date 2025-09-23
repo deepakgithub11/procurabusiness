@@ -17,7 +17,7 @@ const AdminAddProduct = () => {
     }
 
     try {
-      const res = await fetch('/api/products', {
+      const res = await fetch('/api/add-product', {
         method: 'POST',
         body: formData,
       });
