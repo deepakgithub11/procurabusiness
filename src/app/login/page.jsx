@@ -14,7 +14,7 @@ const Login = () => {
     const res = await signIn('credentials', {
       username,
       password,
-      callbackUrl: '/'
+      callbackUrl: '/admindashboard'
     })
     console.log(res.error)
   }

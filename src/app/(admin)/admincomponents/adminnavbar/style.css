@@ -35,6 +35,31 @@
     display: none;
 }
 
+.btn-warning {
+  padding: 10px 20px;
+  background-color: #e53e3e; /* warning red */
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(229, 62, 62, 0.4);
+}
+
+.btn-warning:hover {
+  background-color: #c53030; /* darker red on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(197, 48, 48, 0.5);
+}
+
+.btn-warning:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 6px rgba(197, 48, 48, 0.4);
+}
+
+
 .admin-mobile-nav-link {
     list-style: none;
     display: none;

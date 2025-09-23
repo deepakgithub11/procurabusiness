@@ -1,16 +1,27 @@
-import { AdminNavbar } from "./admincomponents"
+'use client'
+import { AdminNavbar, Unauthorized, Loader } from "./admincomponents"
+import Sessionwrapper from "../sessionwrapper/route";
+import { useSession, signIn, signOut } from "next-auth/react"
 
-// app/(admin)/layout.jsx
-export const metadata = {
-  title: "Admin Panel",
-  description: "Admin section layout",
-}
 
 export default function AdminLayout({ children }) {
+  const { data: session, status } = useSession()
+
+  if (status === 'loading') return <Loader/>;
+
+
+  if (session) {
+    return (
+      <div className="admin-container">
+        <Sessionwrapper>
+          <AdminNavbar />
+          {children}
+        </Sessionwrapper>
+      </div>
+    )
+  }
+
   return (
-    <div className="admin-container">
-      <AdminNavbar/>
-      {children}
-    </div>
+    <div><Unauthorized /></div>
   )
 }

@@ -1,0 +1,56 @@
+.unauth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  padding: 20px;
+}
+
+.unauth-card {
+  background-color: #fff;
+  padding: 50px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 450px;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* ensures vertical stacking */
+  align-items: center;    /* centers all children horizontally */
+}
+
+.unauth-icon {
+  color: #ff6b6b;
+  margin-bottom: 20px;
+  display: block; /* ensures the icon is treated as a block */
+}
+
+.unauth-card h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.unauth-card p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.unauth-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #4a90e2;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.unauth-button:hover {
+  background-color: #357abd;
+  transform: translateY(-2px);
+}

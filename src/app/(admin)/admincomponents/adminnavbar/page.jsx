@@ -3,10 +3,19 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
+import { useSession, signIn, signOut } from "next-auth/react"
 import './style.css'
+import { useRouter } from 'next/navigation';
 
 const AdminNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const router = useRouter()
+
+  const handleclick = async () => {
+    await signOut({ redirect: false }); 
+    router.push('/')
+  }
 
   return (
     <>
@@ -19,6 +28,8 @@ const AdminNavbar = () => {
               <li><Link href={{ pathname: '/adminaddproduct' }}>Add Products</Link></li>
               <li><Link href={{ pathname: '/adminorders' }}>Orders</Link></li>
             </ul>
+
+            <button className='btn-warning' onClick={handleclick}>Sign Out</button>
           </div>
           <div className='admin-hamburger'>
             <button style={{ all: 'unset' }} onClick={() => { setIsOpen(!isOpen) }}>
