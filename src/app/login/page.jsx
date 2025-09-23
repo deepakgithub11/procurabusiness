@@ -1,23 +1,22 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { signIn } from "next-auth/react"
 import './style.css'
 
 const Login = () => {
-
   const [username, setUsername] = useState()
   const [password, setPassword] = useState()
 
   const { register, handleSubmit, formState: { isSubmitting } } = useForm();
 
   const submit = async () => {
-    // const res = await signIn('credentials', {
-    //   username,
-    //   password,
-    //   callbackUrl: '/dashboard'
-    // })
-    // console.log(res) 
+    const res = await signIn('credentials', {
+      redirect: false,
+      username,
+      password,
+      callbackUrl: '/'
+    })
+    console.log(res.error)
   }
 
   return (

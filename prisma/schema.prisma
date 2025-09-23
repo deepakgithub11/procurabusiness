@@ -14,7 +14,7 @@ datasource db {
 }
 
 model Product {
-  id          Int      @id @default(autoincrement()) // Product Code
+  id          Int      @id @default(autoincrement())
   name        String
   description String?
   price       Float
@@ -24,7 +24,7 @@ model Product {
 
 model User {
   id       Int      @id @default(autoincrement())
-  username     String
+  username     String @unique 
   phone    String   @unique
   password String
   orders   Order[]
