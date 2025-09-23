@@ -1,0 +1,32 @@
+.container {
+    padding: 10px;
+    background: linear-gradient(-90deg,
+            rgba(42, 123, 155, 0.81) 0%,
+            rgba(87, 199, 133, 0.76) 100%,
+            rgba(237, 221, 83, 1) 100%);
+}
+
+.nav-logo{
+    display: flex;
+    gap: 3vw;
+    align-items: center;
+}
+
+.navbar {
+    margin: 0px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-link {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+ul li a  {
+    text-decoration: none !important;
+    color: aliceblue;
+}
+
