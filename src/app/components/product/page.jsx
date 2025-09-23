@@ -1,44 +1,37 @@
-import React from "react";
-import "./style.css"; 
-
-
-const products = [
-  {
-    id: 1,
-    name: "Laptop",
-    description: "A high-performance laptop suitable for work and gaming.",
-    price: 75000,
-    image: "images/bird.png",
-  },
-  {
-    id: 2,
-    name: "Smartphone",
-    description: "Latest smartphone with amazing camera and fast processor.",
-    price: 35000,
-    image: "images/bird.png",
-  },
-  {
-    id: 3,
-    name: "Headphones",
-    description: "Noise-cancelling headphones with superior sound quality.",
-    price: 5000,
-    image: "images/bird.png",
-  },
-  {
-    id: 4,
-    name: "Camera",
-    description: "Professional DSLR camera for photography lovers.",
-    price: 45000,
-    image: "images/bird.png",
-  },
-];
+'use client'
+import React, { useEffect, useState } from "react";
+import './style.css';
 
 const Product = () => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const res = await fetch('/api/products');
+        const data = await res.json();
+        setProducts(data.products || []);
+      } catch (err) {
+        console.error("Error fetching products:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProducts();
+  }, []);
+
+  if (loading) return <p className="loading">Loading products...</p>;
+
   return (
     <div className="product-container">
       {products.map((product) => (
         <div className="product-card" key={product.id}>
-          <img src={product.image} alt={product.name} />
+          {product.image ? (
+            <img src={product.image} alt={product.name} />
+          ) : (
+            <div className="no-image">No Image</div>
+          )}
           <h3>{product.name}</h3>
           <p className="desc">{product.description}</p>
           <p className="price">₹ {product.price.toLocaleString()}</p>
