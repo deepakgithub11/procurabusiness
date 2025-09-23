@@ -1,7 +1,7 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { useSession, signIn, signOut } from "next-auth/react"
+import { signIn } from "next-auth/react"
 import './style.css'
 
 const Login = () => {
@@ -14,9 +14,15 @@ const Login = () => {
     const res = await signIn('credentials', {
       username,
       password,
+      redirect: false,
       callbackUrl: '/admindashboard'
     })
-    console.log(res.error)
+
+    if (res?.error) {
+      alert(`Login failed: ${res.error}`);
+    } else {
+      window.location.href = res.url || '/admindashboard';
+    }
   }
 
   return (
