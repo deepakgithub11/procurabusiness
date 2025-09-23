@@ -13,7 +13,7 @@ const AdminNavbar = () => {
   const router = useRouter()
 
   const handleclick = async () => {
-    await signOut({ redirect: false }); 
+    await signOut(); 
     router.push('/')
   }
 

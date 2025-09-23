@@ -37,6 +37,7 @@ const Product = () => {
   };
 
   const handleOrder = async (productId, price) => {
+    console.log(productId,price)
     const quantity = quantities[productId] || 1;
     const total = quantity * price;
 
@@ -44,7 +45,9 @@ const Product = () => {
       const res = await fetch('/api/orders', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ productId, quantity, total }),
+        body: JSON.stringify({ productId, quantity, total  }),
+          credentials: 'include', // ✅ important
+
       });
       if (!res.ok) throw new Error('Failed to place order');
       alert('Order placed successfully!');
