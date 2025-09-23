@@ -1,8 +1,9 @@
 import React from 'react'
+import AdminUsers from '../admin-users/page'
 
 const AdminDashboard = () => {
   return (
-    <div>AdminDashboard</div>
+    <AdminUsers/>
   )
 }
 

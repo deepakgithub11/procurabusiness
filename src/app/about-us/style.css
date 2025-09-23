@@ -1,0 +1,40 @@
+.wip-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background-color: #f5f5f5;
+  text-align: center;
+  padding: 20px;
+}
+
+.wip-content {
+  background-color: #fff;
+  padding: 50px 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.wip-content h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ff6b00;
+}
+
+.wip-content p {
+  font-size: 18px;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .wip-content {
+    padding: 30px 20px;
+  }
+  .wip-content h1 {
+    font-size: 26px;
+  }
+  .wip-content p {
+    font-size: 16px;
+  }
+}
