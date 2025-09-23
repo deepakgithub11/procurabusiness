@@ -30,3 +30,58 @@ ul li a  {
     color: aliceblue;
 }
 
+.hamburger {
+    display: none;
+}
+
+.mobile-nav-link {
+    list-style: none;
+    display: none;
+    gap: 15px;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    padding: 25px;
+    background: rgb(68 167 133)
+}
+
+.cls-btn {
+    z-index: 1;
+    background-color: #ffe7e700;
+    border: none;
+    position: absolute;
+    right: 20px;
+}
+
+
+@media (max-width: 480px) {
+
+    .modal {
+        position: fixed;
+        top: 60;
+        height: 100vh;
+        left: -100%;
+        width: 100vw;
+        box-sizing: border-box;
+        transition: left 0.5s ease-in-out;
+        z-index: 1000;
+    }
+
+    .modal.visible {
+        left: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-link {
+        display: none;
+    }
+
+    .mobile-nav-link {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+}
