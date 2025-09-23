@@ -1,5 +1,6 @@
 'use client'
 import React, { useEffect, useState } from "react";
+import { Loader } from "../index";
 import './style.css';
 
 const Product = () => {
@@ -32,12 +33,12 @@ const Product = () => {
   const decreaseQuantity = (productId) => {
     setQuantities(prev => ({
       ...prev,
-      [productId]: Math.max((prev[productId] || 1) - 1, 1) // min 1
+      [productId]: Math.max((prev[productId] || 1) - 1, 1)
     }));
   };
 
   const handleOrder = async (productId, price) => {
-    console.log(productId,price)
+    console.log(productId, price)
     const quantity = quantities[productId] || 1;
     const total = quantity * price;
 
@@ -45,9 +46,9 @@ const Product = () => {
       const res = await fetch('/api/orders', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ productId, quantity, total  }),
-          credentials: 'include', // ✅ important
-        
+        body: JSON.stringify({ productId, quantity, total }),
+        credentials: 'include',
+
       });
       if (!res.ok) throw new Error('Failed to place order');
       alert('Order placed successfully!');
@@ -57,7 +58,16 @@ const Product = () => {
     }
   };
 
-  if (loading) return <p className="loading">Loading products...</p>;
+  if (loading) return <Loader />;
+
+  if (!loading && products.length === 0) {
+    return (
+      <div className="no-data">
+        ⚠️ No products available in Database<br />
+        First <span className="highlight">Sign Up</span> and Add Products from <span className="highlight">Admin Panel</span>.
+      </div>
+    );
+  }
 
   return (
     <div className="product-container">
