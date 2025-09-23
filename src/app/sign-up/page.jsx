@@ -21,10 +21,10 @@ const Sign_up = () => {
           if (!res.ok) {
             alert(result.error || 'Form Not Submitted')
           }
-          else alert(result.message)
+          else alert(result.message || 'Account Created')
         }
         catch (error) {
-          alert(error.message)
+          alert(error.message || 'Something went wrong')
         }
   }
 

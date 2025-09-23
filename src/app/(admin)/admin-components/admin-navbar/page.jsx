@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
-import { useSession, signIn, signOut } from "next-auth/react"
+import { signOut } from "next-auth/react"
 import './style.css'
 import { useRouter } from 'next/navigation';
 
@@ -13,7 +13,7 @@ const AdminNavbar = () => {
   const router = useRouter()
 
   const handleclick = async () => {
-    await signOut(); 
+    await signOut();
     router.push('/')
   }
 
@@ -25,7 +25,7 @@ const AdminNavbar = () => {
             <ul className='admin-nav-link'>
               <li><Link href={{ pathname: '/admin-users' }}> Users </Link></li>
               <li><Link href={{ pathname: '/admin-products' }}> Products</Link></li>
-              <li><Link href={{ pathname: '/adminaddproduct' }}>Add Products</Link></li>
+              <li><Link href={{ pathname: '/admin-add-product' }}>Add Products</Link></li>
               <li><Link href={{ pathname: '/admin-orders' }}>Orders</Link></li>
             </ul>
 
@@ -45,8 +45,8 @@ const AdminNavbar = () => {
           </button>
           <li><Link onClick={() => setIsOpen(false)} href={{ pathname: '/admin-users' }}>Users</Link></li>
           <li><Link onClick={() => setIsOpen(false)} href={{ pathname: '/admin-products' }}> Products</Link></li>
-          <li><Link onClick={() => setIsOpen(false)} href={{ pathname: '/adminaddproduct' }}>Add Product</Link></li>
-          <li><Link onClick={() => setIsOpen(false)} href={{ pathname: '/adminorders' }}>Ordersn</Link></li>
+          <li><Link onClick={() => setIsOpen(false)} href={{ pathname: '/admin-add-product' }}>Add Product</Link></li>
+          <li><Link onClick={() => setIsOpen(false)} href={{ pathname: '/admin-orders' }}>Ordersn</Link></li>
         </ul>
       </div>
     </>

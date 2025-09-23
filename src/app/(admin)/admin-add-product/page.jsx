@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import './style.css'; // plain CSS import
+import './style.css';
 
 const AdminAddProduct = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm();

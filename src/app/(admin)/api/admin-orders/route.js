@@ -10,7 +10,7 @@ export async function GET() {
         user: { select: { id: true, username: true, phone: true } },
         product: { select: { id: true, name: true, price: true } },
       },
-      orderBy: { id: "desc" }, // latest first
+      orderBy: { id: "desc" }, 
     });
 
     return NextResponse.json({ orders });

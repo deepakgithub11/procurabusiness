@@ -6,7 +6,7 @@ const Loader = () => {
   return (
     <div className="loading-container">
       <div className="spinner"></div>
-      <p>Loading admin panel...</p>
+      <p>Loading Please Wait...</p>
     </div>
   );
 };

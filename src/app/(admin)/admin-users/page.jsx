@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import './style.css'; // separate CSS
+import { Loader } from '../admin-components';
+import './style.css';
 
 const AdminUsers = () => {
   const [users, setUsers] = useState([]);
@@ -22,7 +23,7 @@ const AdminUsers = () => {
     fetchUsers();
   }, []);
 
-  if (loading) return <p className="loading">Loading users...</p>;
+  if (loading) return <Loader/>
 
   return (
     <div className="admin-users-container">

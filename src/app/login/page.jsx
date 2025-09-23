@@ -15,13 +15,13 @@ const Login = () => {
       username,
       password,
       redirect: false,
-      callbackUrl: '/admindashboard'
+      callbackUrl: '/admin-dashboard'
     })
 
     if (res?.error) {
       alert(`Login failed: ${res.error}`);
     } else {
-      window.location.href = res.url || '/admindashboard';
+      window.location.href = res.url || '/admin-dashboard';
     }
   }
 
@@ -30,7 +30,7 @@ const Login = () => {
       <div className='sign-up-container'>
 
         <div className='sign-up-img'>
-          <img src='images/welcome.jpg' alt='Welcome' />
+          <img src='images/login.jpg' alt='Welcome' />
         </div>
 
         <div className='sign-up-form'>

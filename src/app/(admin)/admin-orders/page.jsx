@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useState } from "react";
-import "./style.css"; // optional, for custom styles
+import { Loader } from "../admin-components";
+import "./style.css"; 
 
 const AdminOrders = () => {
   const [orders, setOrders] = useState([]);
@@ -21,14 +22,17 @@ const AdminOrders = () => {
     fetchOrders();
   }, []);
 
-  if (loading) return <p>Loading orders...</p>;
+  if (loading) return <Loader/>;
 
   return (
     <div className="admin-orders-container">
-      <h2>All Orders</h2>
       {orders.length === 0 ? (
-        <p>No orders found</p>
+        <div className="no-orders">
+          <p>No orders found</p>
+        </div>
       ) : (
+        <>
+          <h2>All Orders</h2>
         <table className="orders-table">
           <thead>
             <tr>
@@ -57,6 +61,7 @@ const AdminOrders = () => {
             ))}
           </tbody>
         </table>
+        </>
       )}
     </div>
   );

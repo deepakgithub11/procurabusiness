@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import './style.css'
@@ -18,9 +18,8 @@ const Navbar = () => {
             <img src='images/bird.png' width={50} height={50} />
             <ul className='nav-link' id='nav-link'>
               <li><Link href={{ pathname: '/' }}> Home </Link></li>
-              <li><Link href={{ pathname: '/about-us' }}> About Us</Link></li>
               <li><Link href={{ pathname: '/contact' }}>Contact Us</Link></li>
-              <li><Link href={{ pathname: '/admindashboard' }}>Admin Panel</Link></li>
+              <li><Link href={{ pathname: '/admin-dashboard' }}>Admin Panel</Link></li>
             </ul>
           </div>
           <ul className='nav-link' id='nav-link'>
@@ -42,7 +41,6 @@ const Navbar = () => {
             </button> */}
           <ul className='mobile-nav-link' id='mobile-nav-link'>
             <li><Link onClick={() => { setIsopen(!isOpen) }} href={{ pathname: '/' }}>Home</Link></li>
-            <li><Link onClick={() => { setIsopen(!isOpen) }} href={{ pathname: '/about-us' }}>About Us</Link></li>
             <li><Link onClick={() => { setIsopen(!isOpen) }} href={{ pathname: '/contact' }}>Contact Us</Link></li>
             <li><Link onClick={() => { setIsopen(!isOpen) }} href={{ pathname: '/login' }}>Login In</Link></li>
             <li><Link onClick={() => { setIsopen(!isOpen) }} href={{ pathname: '/sign-up' }}>Sign Up</Link></li>

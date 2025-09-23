@@ -38,7 +38,6 @@ const Product = () => {
   };
 
   const handleOrder = async (productId, price) => {
-    console.log(productId, price)
     const quantity = quantities[productId] || 1;
     const total = quantity * price;
 
@@ -48,10 +47,15 @@ const Product = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ productId, quantity, total }),
         credentials: 'include',
-
       });
-      if (!res.ok) throw new Error('Failed to place order');
-      alert('Order placed successfully!');
+
+      const result = await res.json()
+      if (!res.ok) {
+        alert(result.error || "Failed to place order");
+        return;
+      }
+
+      alert(result.message || "Order placed successfully!");
     } catch (err) {
       console.error(err);
       alert('Error placing order');

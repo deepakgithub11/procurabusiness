@@ -122,8 +122,8 @@
 }
 
 .no-data {
-  background-color: #fff3cd;   /* light yellow background */
-  color: #856404;             /* dark amber text */
+  background-color: #fff3cd;   
+  color: #856404;             
   border: 1px solid #ffeeba;
   padding: 16px 24px;
   border-radius: 8px;
@@ -139,7 +139,7 @@
 .no-data .highlight {
   font-size: 20px;
   font-weight: 700;
-  color: #d35400;  /* strong orange highlight */
+  color: #d35400;  
 }
 
 

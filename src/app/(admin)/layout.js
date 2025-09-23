@@ -1,7 +1,7 @@
 'use client'
-import { AdminNavbar, Unauthorized, Loader } from "./admincomponents"
+import { AdminNavbar, Unauthorized, Loader } from "./admin-components"
 import Sessionwrapper from "../sessionwrapper/route";
-import { useSession, signIn, signOut } from "next-auth/react"
+import { useSession } from "next-auth/react"
 
 
 export default function AdminLayout({ children }) {

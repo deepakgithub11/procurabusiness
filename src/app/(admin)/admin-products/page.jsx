@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react';
-import './style.css'; // import separate CSS
+import { Loader } from '../admin-components';
+import './style.css';
 
 const AdminProducts = () => {
   const [products, setProducts] = useState([]);
@@ -10,7 +11,7 @@ const AdminProducts = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch('/api/products'); // your GET API route
+        const res = await fetch('/api/products');
         const data = await res.json();
         setProducts(data.products || []);
       } catch (err) {
@@ -23,7 +24,7 @@ const AdminProducts = () => {
     fetchProducts();
   }, []);
 
-  if (loading) return <p className="loading">Loading products...</p>;
+  if (loading) return <Loader/>;
 
   return (
     <div className="admin-products-container">

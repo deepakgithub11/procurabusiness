@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useForm } from 'react-hook-form'
 import './style.css'
 
@@ -40,10 +40,8 @@ const Contact = () => {
         </div>
 
         <div className='contact-form'>
-          {/* <div>{getdata.contact ? getdata.contact + ' received' : 'Loading Data'}</div> */}
 
           <form className='contact-formm' onSubmit={handleSubmit(onSubmit)}>
-            <h1>API not Integrated</h1>
 
             <h2>Contact Us</h2>
             <div className='input'>
