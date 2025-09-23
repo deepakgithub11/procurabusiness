@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { useSession, signIn, signOut } from "next-auth/react"
 import './style.css'
 
 const Login = () => {
@@ -11,7 +12,6 @@ const Login = () => {
 
   const submit = async () => {
     const res = await signIn('credentials', {
-      redirect: false,
       username,
       password,
       callbackUrl: '/'

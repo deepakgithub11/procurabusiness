@@ -1,3 +1,5 @@
+import { AdminNavbar } from "./admincomponents"
+
 // app/(admin)/layout.jsx
 export const metadata = {
   title: "Admin Panel",
@@ -7,6 +9,7 @@ export const metadata = {
 export default function AdminLayout({ children }) {
   return (
     <div className="admin-container">
+      <AdminNavbar/>
       {children}
     </div>
   )

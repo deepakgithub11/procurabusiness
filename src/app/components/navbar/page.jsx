@@ -20,6 +20,7 @@ const Navbar = () => {
               <li><Link href={{ pathname: '/' }}> Home </Link></li>
               <li><Link href={{ pathname: '/contact' }}> About Us</Link></li>
               <li><Link href={{ pathname: '/contact' }}>Contact Us</Link></li>
+              <li><Link href={{ pathname: '/admindashboard' }}>Admin Panel</Link></li>
             </ul>
           </div>
           <ul className='nav-link' id='nav-link'>
