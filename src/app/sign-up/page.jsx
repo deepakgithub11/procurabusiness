@@ -6,25 +6,26 @@ import './style.css'
 const Sign_up = () => {
 
   const { register, handleSubmit, formState: { isSubmitting } } = useForm();
+  
   const submit = async (data) => {
-    //     try {
+        try {
 
-    //       const res = await fetch('/api/sign-up', {
-    //         method: 'POST',
-    //         headers: { 'Content-Type': 'application/json' },
-    //         body: JSON.stringify(data)
-    //       })
+          const res = await fetch('/api/sign-up', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          })
 
-    //       const result = await res.json()
+          const result = await res.json()
 
-    //       if (!res) {
-    //         alert(result.error || 'Form Not Submitted')
-    //       }
-    //       else alert(result.message)
-    //     }
-    //     catch (error) {
-    //       alert(error.message)
-    //     }
+          if (!res.ok) {
+            alert(result.error || 'Form Not Submitted')
+          }
+          else alert(result.message)
+        }
+        catch (error) {
+          alert(error.message)
+        }
   }
 
   return (
@@ -45,6 +46,11 @@ const Sign_up = () => {
           </div>
 
           <div className='input'>
+            <div>Phone:</div>
+            <input type="text" {...register('phone')} placeholder="Enter your Phone" />
+          </div>
+
+           <div className='input'>
             <div>Password</div>
             <input type="password" {...register('password')} placeholder="Enter your password" />
           </div>
