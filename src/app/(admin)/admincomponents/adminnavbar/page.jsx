@@ -14,10 +14,10 @@ const AdminNavbar = () => {
         <div className='admin-navbar'>
           <div className='admin-nav-logo'>
             <ul className='admin-nav-link'>
-              <li><Link href={{ pathname: '/' }}> Users </Link></li>
-              <li><Link href={{ pathname: '/contact' }}> Products</Link></li>
-              <li><Link href={{ pathname: '/contact' }}>Add Products</Link></li>
-              <li><Link href={{ pathname: '/admindashboard' }}>Orders</Link></li>
+              <li><Link href={{ pathname: '/admin-users' }}> Users </Link></li>
+              <li><Link href={{ pathname: '/admin-products' }}> Products</Link></li>
+              <li><Link href={{ pathname: '/adminaddproduct' }}>Add Products</Link></li>
+              <li><Link href={{ pathname: '/adminorders' }}>Orders</Link></li>
             </ul>
           </div>
           <div className='admin-hamburger'>
@@ -32,10 +32,10 @@ const AdminNavbar = () => {
           <button className='cls-btn' onClick={() => { setIsOpen(false) }}>
             <IoMdClose size={30} />
           </button>
-          <li><Link onClick={() => setIsOpen(false)} href={{ pathname: '/' }}>Users</Link></li>
-          <li><Link onClick={() => setIsOpen(false)} href={{ pathname: '/contact' }}> Products</Link></li>
-          <li><Link onClick={() => setIsOpen(false)} href={{ pathname: '/contact' }}>Add Product</Link></li>
-          <li><Link onClick={() => setIsOpen(false)} href={{ pathname: '/login' }}>Ordersn</Link></li>
+          <li><Link onClick={() => setIsOpen(false)} href={{ pathname: '/admin-users' }}>Users</Link></li>
+          <li><Link onClick={() => setIsOpen(false)} href={{ pathname: '/admin-products' }}> Products</Link></li>
+          <li><Link onClick={() => setIsOpen(false)} href={{ pathname: '/adminaddproduct' }}>Add Product</Link></li>
+          <li><Link onClick={() => setIsOpen(false)} href={{ pathname: '/adminorders' }}>Ordersn</Link></li>
         </ul>
       </div>
     </>
