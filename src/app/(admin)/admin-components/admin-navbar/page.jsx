@@ -4,12 +4,11 @@ import Link from 'next/link'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import { signOut } from "next-auth/react"
-import './style.css'
 import { useRouter } from 'next/navigation';
+import './style.css'
 
 const AdminNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   const router = useRouter()
 
   const handleclick = async () => {

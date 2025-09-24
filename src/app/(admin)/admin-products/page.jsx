@@ -7,7 +7,6 @@ const AdminProducts = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Fetch products from API
   useEffect(() => {
     const fetchProducts = async () => {
       try {

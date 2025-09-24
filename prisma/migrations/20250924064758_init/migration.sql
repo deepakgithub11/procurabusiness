@@ -12,8 +12,9 @@ CREATE TABLE "public"."Product" (
 -- CreateTable
 CREATE TABLE "public"."User" (
     "id" SERIAL NOT NULL,
-    "name" TEXT NOT NULL,
+    "username" TEXT NOT NULL,
     "phone" TEXT NOT NULL,
+    "role" TEXT NOT NULL,
     "password" TEXT NOT NULL,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
@@ -24,10 +25,14 @@ CREATE TABLE "public"."Order" (
     "id" SERIAL NOT NULL,
     "userId" INTEGER NOT NULL,
     "productId" INTEGER NOT NULL,
+    "quantity" INTEGER NOT NULL,
     "total" DOUBLE PRECISION NOT NULL,
 
     CONSTRAINT "Order_pkey" PRIMARY KEY ("id")
 );
+
+-- CreateIndex
+CREATE UNIQUE INDEX "User_username_key" ON "public"."User"("username");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_phone_key" ON "public"."User"("phone");
