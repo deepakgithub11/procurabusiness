@@ -10,6 +10,7 @@ export async function GET() {
         id: true,
         username: true,
         phone: true,
+        role: true,
       },
     });
 
